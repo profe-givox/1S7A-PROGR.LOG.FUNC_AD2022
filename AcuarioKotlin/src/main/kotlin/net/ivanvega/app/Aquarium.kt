@@ -4,10 +4,21 @@ class Aquarium ( width: Int =20, heigth: Int = 40,  length: Int = 100 ) {
     var width: Int = width
     var heigth: Int = heigth
     var length: Int = length
-    var volume: Int = 0
+
+//    val volume: Int
+//        get() = (width * heigth * length) / 1000
+
+    var volume: Int
+        get() { return (width * heigth * length) / 1000 }
+        set(value)
+        {
+            heigth = (value*1000) / (width*length)
+        }
+
+
     init {
         println("Bloque de inicializacion")
-        volume = width*heigth*length
+        //volume = width*heigth*length
         printSize()
     }
 
@@ -19,7 +30,7 @@ class Aquarium ( width: Int =20, heigth: Int = 40,  length: Int = 100 ) {
 
     fun printSize(){
         println("Ancho: $width, " + "alto: $heigth, " + "largo:  $length " )
-        println("Volume: $volume " )
+        println("Volume: $volume lts" )
     }
 }
 
@@ -32,7 +43,7 @@ fun construirAquario(){
     miAcuario.printSize()
 
     println("-----------------------------")
-    miAcuario.volume =  90000
+    //miAcuario.volume =  90000
     miAcuario.printSize()
 
     println("-----------------------------")
