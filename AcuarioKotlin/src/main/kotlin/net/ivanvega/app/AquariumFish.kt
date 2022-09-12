@@ -7,11 +7,11 @@ abstract class AquariumFish {
 fun makeFish(){
     val shark = Shark();
     println("Shark color: ${shark.color}")
+    shark.eat()
 
     val plecus = Plecostumes()
     println("Plecus color: ${plecus.color}")
-
-
+    plecus.eat()
 }
 
 fun main(){
