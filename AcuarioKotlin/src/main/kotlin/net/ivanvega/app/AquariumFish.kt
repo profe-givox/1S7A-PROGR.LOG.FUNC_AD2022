@@ -12,25 +12,19 @@ fun makeFish(){
     println("Shark color: ${shark.color}")
     shark.eat()
 
-    val plecus = Plecostumes(
-        object : FishColor {
-            override val color: String
-                get() = "verde"
-
-        }
-    )
+    val plecus = Plecostumes()
     println("Plecus 1 color: ${plecus.color}")
     plecus.eat()
 
-    val plecus2 = Plecostumes(
-        object : FishColor {
-            override val color: String
-                get() = "verde"
+    val otroColor =  object:FishColor{
+        override val color: String
+            get() = "Verde"
 
-        }
-    )
-    println("Plecus 2 color: ${plecus.color}")
-    plecus.eat()
+    }
+
+    val plecus2 = Plecostumes(otroColor)
+    println("Plecus 2 color: ${plecus2.color}")
+    plecus2.eat()
 
 }
 
